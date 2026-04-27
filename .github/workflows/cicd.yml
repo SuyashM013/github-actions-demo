@@ -1,0 +1,19 @@
+name: CI worklfow
+
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+
+jobs:
+    build:
+        runs-on: ububtu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Setup Docker
+              uses: docker/setup-buildx-action@v1
+
